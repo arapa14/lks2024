@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\RentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ Route::post('/a24/auth/login', [AuthController::class, 'login'])->name('login');
 Route::post('/a24/auth/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
 
 Route::resource('/a24/cars', CarController::class);
+Route::resource('/a24/rents', RentController::class);

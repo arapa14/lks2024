@@ -6,23 +6,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
-class Car extends Model
+class Rent extends Model
 {
     use HasFactory, HasApiTokens;
 
-    protected $table = 'cars';
+    protected $table = 'rents';
 
     protected $fillable = [
-        'no_car',
-        'name_car',
-        'type_car',
-        'year',
-        'seat',
-        'image',
+        'tenant_id',
+        'car_id',
+        'date_borrow',
+        'date_return',
+        'down_payment',
+        'discount',
         'total',
-        'price',
-        'status',
     ];
+
+    public function users() {
+        return $this->belongsTo(User::class);
+    }
 
     public function cars() {
         return $this->belongsTo(Car::class);
