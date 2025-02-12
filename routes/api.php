@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,3 +13,5 @@ Route::get('/user', function (Request $request) {
 Route::post('/a24/register', [AuthController::class, 'register'])->name('register');
 Route::post('/a24/auth/login', [AuthController::class, 'login'])->name('login');
 Route::post('/a24/auth/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
+
+Route::resource('/a24/cars', CarController::class);
