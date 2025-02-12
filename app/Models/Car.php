@@ -24,7 +24,11 @@ class Car extends Model
         'status',
     ];
 
-    public function cars() {
-        return $this->belongsTo(Car::class);
+    public function rent() {
+        return $this->belongsTo(Rent::class);
+    }
+
+    public function penalties() {
+        return $this->hasMany(Penaltie::class);
     }
 }

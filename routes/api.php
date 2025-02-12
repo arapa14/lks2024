@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\PenaltieController;
 use App\Http\Controllers\RentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,4 @@ Route::post('/a24/auth/logout', [AuthController::class, 'logout'])->name('logout
 
 Route::resource('/a24/cars', CarController::class);
 Route::resource('/a24/rents', RentController::class);
+Route::resource('/a24/penalties', PenaltieController::class);
